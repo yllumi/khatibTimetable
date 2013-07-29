@@ -1,0 +1,16 @@
+PavraSession is a simple and extensible Session library written in php. At the moment, it supports only native php sessions, but it can be extended to include more kinds of sessions (e.g. cookie based, database based etc). 
+
+Example usage:
+
+All you need to do is include the init.php file anywhere in your project. That's it! The init file registers the class autoloader (which works with PHP 5.3 namespaces, for more information, read the documentation/comments in Components/Autoload/Autoload.php) in order to facilitate the usage of the library.
+
+Code example:
+
+include 'PavraSession/init.php';
+
+// this line creates an instance of the session library. It does not start a new session automatically
+$session = \PavraSession\Components\Session\SessionFactory::create('native');
+
+// start a session
+$session->start();
+
