@@ -1,0 +1,15 @@
+[21-Apr-2014 20:09:13 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'Exception' with message 'Unable to open database: unable to open database file' in /home/madfront/public_html/projects/khatib-timetable/app_file.php:81
+Stack trace:
+#0 /home/madfront/public_html/projects/khatib-timetable/app_file.php(81): SQLite3->__construct('/home/madfront/...')
+#1 [internal function]: download_file()
+#2 /home/madfront/public_html/projects/khatib-timetable/app_file.php(11): call_user_func('download_file')
+#3 {main}
+  thrown in /home/madfront/public_html/projects/khatib-timetable/app_file.php on line 81
+[03-May-2014 23:44:28 Asia/Jakarta] PHP Warning:  SQLite3::exec() [<a href='sqlite3.exec'>sqlite3.exec</a>]: near &quot; &quot;: syntax error in /home/madfront/public_html/projects/khatib-timetable/app_file.php on line 49
+[12-Jun-2014 07:25:30 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'Exception' with message 'Unable to open database: unable to open database file' in /home/madfront/public_html/projects/khatib-timetable/app_file.php:81
+Stack trace:
+#0 /home/madfront/public_html/projects/khatib-timetable/app_file.php(81): SQLite3->__construct('/home/madfront/...')
+#1 [internal function]: download_file()
+#2 /home/madfront/public_html/projects/khatib-timetable/app_file.php(11): call_user_func('download_file')
+#3 {main}
+  thrown in /home/madfront/public_html/projects/khatib-timetable/app_file.php on line 81

@@ -32,13 +32,13 @@
 	define('BASEPATH', str_replace("\\", "/", $system_path));
 
 	// config folder
-	define('CONFIGPATH', BASEPATH."/config/");
+	define('CONFIGPATH', BASEPATH."config/");
 
 	// assets folder
-	define('ASSETPATH', BASEPATH."/assets/");
+	define('ASSETPATH', BASEPATH."assets/");
 
 	// helpers folder
-	define('HELPERPATH', BASEPATH."/helpers/");
+	define('HELPERPATH', BASEPATH."helpers/");
 
 	/*
 	 * ---------------------------------------------------------------

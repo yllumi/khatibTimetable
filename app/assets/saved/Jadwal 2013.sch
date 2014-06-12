@@ -1,1 +1,0 @@
-{"max_same_column_data":1,"min_same_column_data":1,"max_same_row_data":1,"min_same_row_data":1,"shift_row":1,"shift_column":1,"exchange_type":"row_only"}

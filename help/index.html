@@ -1,0 +1,241 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	<meta charset="utf-8">
+	<title>Khatib Timetable Documentation</title>
+	<link rel="stylesheet" href="assets/bootstrap/bootstrap.css" type="text/css" media="screen, projection">
+	<style>
+		body {padding-top: 20px;background: #fcfcfc}
+		.align-center {text-align: center;}
+		.align-right {text-align: right;}
+		h2 {font-size: 24px; color: darkblue;}
+		h3 {font-size: 18px; color: steelblue;}
+		section {border-top: 5px solid #ddd;display: block;position: relative; padding: 0 10px;}
+		section#home {border:none;}
+		section.subsection {padding: 5px 5px 10px 10px; border-top: 1px solid #ddd;}
+		#navbar {}
+		.nav-sub {padding-left: 20px;}
+		hr {border-top: 1px solid #eee; border-bottom: 1px solid #ddd;}
+		section img {margin-bottom: 10px;}
+	</style>
+	<link rel="stylesheet" href="assets/bootstrap/bootstrap-responsive.css" type="text/css" media="screen, projection">
+
+	<script src="assets/syntaxhighlighter/scripts/shCore.js"></script>
+	<script src="assets/syntaxhighlighter/scripts/shBrushXml.js"></script>
+	<script src="assets/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+	<script src="assets/syntaxhighlighter/scripts/shBrushCss.js"></script>
+	<link rel="stylesheet" href="assets/syntaxhighlighter/styles/shCoreDefault.css" type="text/css"/>
+</head>
+<body id="top">
+	<div class="container">
+		<div class="row">
+
+			<div class="span3 toc" id="toc">
+				<!-- table of content -->
+				<ul class="nav nav-pills nav-stacked sidebar affix" id="navbar">
+					<li><a href="#top"><strong>Khotib Timetable</strong></a></li>
+					<li><a href="#sekilas">Sekilas tentang Aplikasi</a></li>
+					<li><a href="#pengenalan">Pengenalan Area Kerja</a></li>
+						<li class="nav-sub"><a href="#sidebar">Sidebar Aplikasi</a></li>
+						<li class="nav-sub"><a href="#halaman">Halaman Aplikasi</a></li>
+					<li><a href="#new-file">Membuat Dokumen Baru</a></li>
+					<li><a href="#save-file">Menyimpan Dokumen</a></li>
+					<li><a href="#open-file">Membuka Dokumen</a></li>
+					<li><a href="#working">Bekerja dengan Dokumen</a></li>
+						<li class="nav-sub"><a href="#add-column">Menambah Data Kolom</a></li>
+						<li class="nav-sub"><a href="#add-row">Menambah Data Baris</a></li>
+						<li class="nav-sub"><a href="#add-sel">Menambah Data Khotib</a></li>
+						<li class="nav-sub"><a href="#manipulate">Mengisi Data Tabel</a></li>
+					<li><a href="#export">Mengekspor Dokumen ke Excel</a></li>
+					<li><a href="#close">Menutup File</a></li>
+					<li><a href="#crash">Kerusakan Sistem</a></li>
+				</ul>				
+			</div> <!-- end .span3 -->
+
+			<div class="span9" id="main-content">
+
+				<section id="home">
+					<div class="well align-center">
+						<p>"Khotib Timetable" Documentation by Toni Haryanto v1.0</p>
+						<h1>Khotib Timetable</h1>
+						<div>
+							<p>
+								Created: 22/08/2013<br>
+								By: Toni Haryanto<br>
+								Email: <a href="mailto:toha.samba@gmail.com">toha.samba@gmail.com</a>
+							</p>
+						</div>
+					</div>
+					<div class="alert alert-success">
+						Terima kasih telah membeli aplikasi saya. Apabila Anda memiliki pertanyaan seputar aplikasi ini yang tidak terdapat di dalam dokumetasi, jangan sungkan untuk mengirimkan pertanyaan melalui <a href="mailto:toha.samba@gmail.com">email saya</a>. Terima kasih!
+					</div>
+					<div class="clearfix"></div>
+				</section>
+
+				<section id="sekilas">
+					<h2><strong>A) Sekilas tentang Aplikasi</strong></h2>
+					<p><strong>Khotib Timetable</strong> adalah aplikasi yang dibuat khusus untuk memudahkan pembuatan jadwal khotib jumat di suatu daerah. Dengan aplikasi ini Anda dapat mengatur penempatan khotib jum'at di setiap masjid untuk setiap minggunya tanpa memerlukan usaha yang besar untuk mengecek satu per satu penempatan karena khawatir ada jadwal yang bentrok. Bentuk tabel jadwal nantinya seperti ini:</p>
+					<img src="assets/img/1.table.png" alt="">
+					<p>Judul kolom paling atas yang berupa huruf-hufur kapital A, B, C, dst. adalah kode yang mewakili nama masjid. Judul baris di sebelah kiri yang berupa tanggal adalah kode tanggal untuk jadwal khutbah. Terakhir kotak-kotak berisi angka yang mejadi perpotongan judul kolom dan judul baris adalah kode yang mewakili nama khotib. Sebagai contoh, Baris kesatu kolom kesatu berisi kode angka 4 yang berarti khotib dengan kode 4 bertugas mengisi khutbah jumat pada tanggal 18/10/2013 di masjid dengan kode A. Daftar kode masjid dan kode khotib nantinya akan disediakan di bagian lain tabel.</p>
+					<p>Aplikasi ini dibuat dengan beberapa fitur yang memungkinkan Anda untuk membuat jadwal khotib dengan jumlah kolom, baris dan data sebanyak apapun dengan lebih mudah dibanding bila harus membuat hal serupa menggunakan aplikasi lain seperti aplikasi spreadsheet.</p>
+					<p>Aplikasi ini berfungsi dengan satu aturan sederhana: tidak ada dua atau lebih kode khotib di baris yang sama, berdasarkan asumsi satu khotib tidak boleh/tidak dapat bertugas di dua masjid di waktu yang sama. Oleh karenanya, kasus-kasus lain yang serupa itu dapat juga dibuat menggunakan aplikasi ini, seperti pembuatan jadwal tugas mengisi pengajian, dan sebagainya.</p>
+
+					<div class="clearfix"></div>
+				</section>
+
+				<section id="pengenalan">
+					<h2><strong>B) Pengenalan Area Kerja</strong></h2>
+					<p>Ketika pertama kali menjalankan aplikasi, Anda akan menemukan halaman beranda aplikasi yang berisi tiga tombol fungsi utama: Membuat File Baru, Membuka File dan Tombol Panduan.</p>
+					<img src="assets/img/2.dashboard.png" alt="">
+					<p>Tombol besar berwarna hijau dengan gambar kertas adalah tombol yang berfungsi untuk membuat file jadwal baru. Tombol besar berwarna oranye dengan gambar map berkas berfungsi untuk membuka file yang sudah pernah dibuat dan disimpan. Kedua fungsi ini (membuat file baru dan membuka file) juga dapat dijalankan oleh dua tombol kecil pertama yang berada di area sebelah kiri.</p>
+					<p>Setelah Anda membuka file, maka halaman yang pertama kali ditampilkan adalah halaman tabel jadwal. Bila Anda membuat file baru, jangan kaget karena halaman tabel tidak menampilkan apapun karena Anda belum mendefinisikan kolom dan baris tabelnya.</p>
+					<img src="assets/img/3.halaman-tabel.png" alt="">
+
+					<hr class="thin" id="sidebar">
+					<h3>Sidebar Aplikasi</h3>
+					<p>Di bagian kiri halaman, terdapat 4 tombol utama dan 4 menu utama.</p>
+					<img src="assets/img/7.sidebar-minimized.png" title="tampilan minimized sidebar">
+					<img src="assets/img/7.sidebar.png" title="tampilan full sidebar">
+					<p>4 tombol utama yang tersedia diantaranya adalah tombol berwarna hijau untuk membuat file baru, tombol berwarna oranye untuk membuka file primari yang pernah disimpan, tombol berwarna merah untuk menyimpan file primari yang sudah dibuat, dan terakhir tombol berwarna biru untuk mengunduh file hasil ekspor data dalam bentuk file Excel. 
+					<p>4 menu utama yaitu menu <strong>Tabel Jadwal</strong>, <strong>Lokasi Khutbah</strong>, <strong>Tanggal Khutbah</strong>, dan <strong>Data Khotib</strong>. Menu ini digunakan untuk mengakses halaman-halaman yang tersedia pada aplikasi.</p>
+					<p>Anda dapat memperkecil ukuran (minimized) sidebar agar wilayah kerja utama lebih luas dengan mengklik tombol panah di bagian paling bawah sidebar.</p>
+
+					<hr class="thin" id="halaman">
+					<h3>Halaman-halaman Aplikasi</h3>
+					<p>Terdapat 4 halaman yang dapat diakses di dalam aplikasi ini. Selain halaman tabel yang sudah dijelaskan di atas, ada 3 halaman lainnya yang dapat diakses melalui menu di sidebar aplikasi.</p>
+					<p><strong>Lokasi Khutbah</strong> adalah halaman untuk menampilkan dan menambah data lokasi khutbah yang nantinya akan menjadi <u>data kolom</u> pada tabel jadwal.</p>
+					<img src="assets/img/4.halaman-kolom.png" alt="">
+					<p><strong>Tanggal Khutbah</strong> adalah halaman untuk menampilkan dan menambah data tanggal khutbah yang nantinya akan menjadi <u>data baris</u> pada tabel jadwal.</p>
+					<img src="assets/img/5.halaman-baris.png" alt="">
+					<p><strong>Data Khotib</strong> adalah halaman untuk menampilkan dan menambah data khotib yang nantinya akan menjadi <u>isi data</u> pada tabel jadwal.</p>
+					<img src="assets/img/6.halaman-data.png" alt="">
+					<p></p>
+
+				</section>
+
+				<section id="new-file">
+					<h2><strong>C) Membuat Dokumen Baru</strong></h2>
+					<p>Ada dua cara membuat dokumen baru: dengan mengklik tombol hijau besar di halaman beranda, atau tombol hijau kecil di sidebar. Setelah Anda mengklik tombol tersebut, akan muncul jendela pop-up yang meminta konfirmasi nama file yang akan Anda buat.</p>
+					<img src="assets/img/8.pop-up.newfile.png" alt="">
+					<p>Isikan nama file yang Anda inginkan di bagian Nama File kemudian tekan tombol Buat File Baru. Apabila kolom isian Nama File tidak diisi, maka file akan diberi nama default <em>untitled-schedule.sch</em>.</p>
+					<p>Setelah Anda membuat dokumen, maka akan muncul halaman tabel kosong. Anda harus mendefinisikan daftar kolom, baris dan data khotibnya di halaman masing-masing. Setiap kali Anda menambah data kolom dan baris baru, tabel jadwal di halaman tabel akan otomatis terbentuk dan diperbaharui.</p>
+				</section>
+
+				<section id="save-file">
+					<h2><strong>D) Menyimpan Dokumen</strong></h2>
+					<p>Setelah Anda mengisikan data-data di dalam file, Anda dapat menyimpan file yang sudah Anda buat dengan mengklik tombol berwarna merah di sidebar, dan file data primari akan diunduh. Anda dapat menutup file dengan mengklik tombol x di sebelah kanan atas aplikasi langsung tanpa mengunduh terlebih dahulu file primari. File yang sudah pernah dibuat dan dimodifikasi akan otomatis tersimpan di dalam aplikasi dan Anda dapat membukanya sewaktu-waktu. Fitur Unduh Data Primari ini baiknya digunakan apabila jadwal yang Anda buat sudah rampung dan Anda tidak akan mengakses lagi file tersebut dalam waktu lama, sehingga Anda ingin menyimpan file primari ini manakala sewaktu-waktu aplikasi Anda tidak dapat diakses (karena komputer yang rusak, windows corrupt dsb) dan membutuhkan instal ulang aplikasi sehingga data yang ada di dalamnya pun hilang. File primari yang sudah pernah diunduh dapat dibuka kembali pada aplikasi instalasi baru.</p>
+				</section>
+
+				<section id="open-file">
+					<h2><strong>E) Membuka Dokumen</strong></h2>
+					<p>File primari yang sudah pernah Anda unduh dan simpan dapat dibuka kembali pada aplikasi ini dengan mengklik tombol berwarna oranye pada sidebar atau tombol oranye besar pada halaman beranda. Ketika tombol ditekan, akan muncul jendela baru unntuk memilih file yang akan dibuka. Pastikan file yang dibuka adalah file primari asli dengan ekstensi .sch.</p>
+					<p>Anda juga dapat langsung membuka file yang sudah pernah Anda buat dan tersimpan di dalam aplikasi dengan mengklik daftar file di beranda di sebelah tombol oranye besar.</p>
+				</section>
+
+				<section id="working">
+					<h2><strong>F) Bekerja dengan Dokumen</strong></h2>
+					<p>Telah dijelaskan di bagian sebelumnya bahwa data kolom dan data baris harus didefinisikan terlebih dahulu agar tabel jadwal terbentuk. Selain itu Anda juga harus menyiapkan data khotib yang nantinya akan dimasukkan ke dalam tabel jadwal.</p>
+
+					<hr class="thin" id="add-column">
+					<h3>Menambah Data Kolom (Lokasi Khutbah)</h3>
+					<p>Untuk menambahkan data kolom, masuklah terlebih dahulu ke halaman Lokasi Khutbah, kemudian tekan tombol Tambah Kolom di bagian atas halaman. Maka akan muncul halaman form tambah data kolom.</p>
+					<img src="assets/img/9.add-column.png" alt="">
+					<p>Ada tiga isian di form tambah kolom: Kode Masjid, Nama Masjid, dan Deskripsi Masjid.</p>
+					<p>Kode Masjid adalah kode yang digunakan untuk mewakili data Lokasi Khutbah di dalam tabel, yang nantinya akan menjadi label kolom pada tabel jadwal. Anda dapat menggunakan huruf, atau kombinasi huruf dan angka untuk kode kolom ini. Pastikan jenis kode masjid ini dibuat berbeda dengan kode khotib nantinya agar pembuatan tabel tidak bingung, misalnya kode masjid dengan huruf, kode khotib dengan angka, atau sebaliknya.</p>
+					<p>Nama masjid adalah nama untuk masjid sebagai lokasi khutbah.</p>
+					<p>Deskripsi Masjid adalah isian untuk keterangan lokasi khutbah, misalnya nomor telepon DKM masjid, alamat masjid dsb.</p>
+					<p>Setelah Anda mengisikan data lokasi khutbah pada form, tekan tombol Simpan untuk menyimpan Data.</p>
+
+					<hr class="thin" id="add-row">
+					<h3>Menambah Data Baris (Tanggal Khutbah)</h3>
+					<p>Untuk menambahkan data baris tidak berbeda dengan menambah data kolom, masuklah terlebih dahulu ke halaman Tanggal Khutbah, kemudian tekan tombol Tambah Baris di bagian atas halaman. Maka akan muncul halaman form tambah data baris.</p>
+					<img src="assets/img/9.add-row.png" alt="">
+					<p>Ada tiga isian di form tambah kolom: Kode Baris, Judul Baris, dan Deskripsi Baris.</p>
+					<p>Dikarenakan baris pada tabel jadwal hanya merepresentasikan tanggal khutbah, maka data baris ini hanya memerlukan isian Kode Baris yang nantinya akan menjadi judul baris pada  tabel jadwal. Meski demikian Anda tetap dapat mengisi Judul Baris dan Deskripsi Baris sesuai keperluan.</p>
+					<p>Setelah Anda mengisikan data lokasi khutbah pada form, tekan tombol Simpan untuk menyimpan Data.</p>
+
+					<hr class="thin" id="add-sel">
+					<h3>Menambah Data Khotib</h3>
+					<p>Untuk menambahkan data khotib, masuklah terlebih dahulu ke halaman Data Khotib, kemudian tekan tombol Tambah Data di bagian atas halaman. Maka akan muncul halaman form tambah data khotib.</p>
+					<img src="assets/img/9.add-node.png" alt="">
+					<p>Ada tiga isian di form tambah kolom: Kode Khotib, Nama Khotib, dan Deskripsi Khotib.</p>
+					<p>Kode Khotib adalah kode yang digunakan untuk mewakili data khotib yang bertugas mengisi khutbah yang nantinya akan menjadi label sel pada tabel jadwal. Anda dapat menggunakan huruf, atau kombinasi huruf dan angka untuk kode khotib ini. Pastikan jenis kode Khotib ini dibuat berbeda dengan kode khotib nantinya agar pembuatan tabel tidak bingung, misalnya kode Khotib dengan huruf, kode khotib dengan angka, atau sebaliknya.</p>
+					<p>Isikan nama khotib di form isian Nama Khotib.</p>
+					<p>Deskripsi khotib adalah isian untuk keterangan khotib, misalnya nomor telepon khotib, alamat khotib dsb.</p>
+					<p>Setelah Anda mengisikan data khotib pada form, tekan tombol Simpan untuk menyimpan Data.</p>
+
+					<hr class="thin" id="manipulate">
+					<h3>Memasang dan Menghapus Data Tabel</h3>
+					<p>Setelah semua data kolom, baris dan khatib sudah lengkap, Anda dapat mulai memasukkan data khatib ke dalam tabel jadwal sesuai kebutuhan. Secara default tabel jadwal akan terbentuk dengan sel tabel yang masih kosong.</p>
+					<img src="assets/img/10.blank-table.png" alt="">
+					<p>Untuk memasang data khatib pada tabel, klik sel yang ingin dipasang data sampai sel tersebut berwarna hijau bersamaan dengan aktifnya tombol Pasang Data di bagian atas halaman. Kemudian tekan tombol Pasang Data, maka akan muncul jendela pop-up berisi daftar khatib.</p>
+					<img src="assets/img/11.pasang-data.png" alt="">
+					<p>Pada daftar khatib, ada data khatib yang berwarna latar hijau tua dan hijau muda. Warna latar hijau tua menandakan khatib tersebut dapat dipasang pada sel aktif, sedangkan warna latar hijau muda menandakan bahwa khatib tersebut tidak dapat dipilih karena sudah mengisi sel lain pada baris yang sama. Hal ini untuk memastikan Anda tidak memasukkan dua nama khatib pada baris yang sama.</p>
+					<p>Untuk jumlah kolom dan baris yang sangat banyak akan sangat merepotkan bila Anda harus memasang satu per satu data ke dalam sel. Oleh karenanya, aplikasi ini dilengkapi dengan fitur Generate Data untuk memasang data khatib ke seluruh sel secara random teratur. Anda dapat mengaksesnya langsung melalui tombol Generate Data di bagian atas halaman. Akan muncul jendela konfirmasi yang menyatakan bahwa data yang telah digenerate tidak akan dapat dikembalikan ke susunan data sebelumnya.</p>
+					<p>Bila Anda hendak membuat perubahan-perubahan kecil pada susunan data sel, Anda dapat menghapus beberapa sel dan memasangnya dengan data yang baru. Untuk menghapus sel, Anda tinggal mengklik terlebih dahulu sel yang ingin dihapus hingga warna sel berubah menjadi oranye, kemudian tekan tombol Hapus Data di bagian atas halaman. Anda dapat mengisi kembali sel yang kosong dengan tombol Pasang Data, seperti dijelaskan di atas.</p>
+
+				</section>
+
+				<section id="export">
+					<h2><strong>G) Mengekspor Dokumen ke Excel</strong></h2>
+					<p>Anda dapat mengekspor data tabel jadwal beserta daftar masjid dan khatib ke dalam format excel untuk nantinya Anda cetak ke atas kertas. Untuk mengekspor data, tekan tombol berwarna biru di sidebar, dan aplikasi akan mengunduhkan data Anda ke dalam format xls.</p>
+				</section>
+
+				<section id="close">
+					<h2><strong>H) Menutup File</strong></h2>
+					<img src="assets/img/12.tutup-file.png" alt="">
+					<p>Anda dapat menutup aplikasi langsung dengan menekan tombol Close di sudut kanan atas jendela. Data yang sudah dibuat tidak akan hilang. Akan tetapi alangkah baiknya bila Anda menutup terlebih dahulu file yang sedang dibuka, dengan mengklik simbol x di sebelah nama file di bagian kanan atas aplikasi. Hal ini bertujuan untuk membersihkan penggunaan memori sementara pada file.</p>
+				</section>
+
+				<section id="crash">
+					<h2><strong>I) Kerusakan Sistem</strong></h2>
+					<p>Apabila suatu ketika aplikasi tidak dapat dijalankan atau rusak, sedangkan Anda belum menyimpan data primari dari aplikasi tersebut, langkah pengamanan pertama adalah menyelamatkan data dari dalam sistem.</p>
+					<p>Buka file di tempat Anda mengekstrak aplikasi, kemudian masuk ke folder htdocs/khatib-timetable/app/assets/ kemudian kopikan folder saved beserta seluruh isinya ke tempat lain. Folder tersebut berisi semua file yang pernah dibuat dan disimpan di dalam sistem.</p>
+					<p>Untuk mengembalikan aplikasi seperti sedia kala, ekstrak kembali semua file aplikasi dari bundel file master yang Anda dapatkan dari kami ke tempat Anda menginstal sebelumnya atau ke tempat lain yang Anda inginkan.</p>
+				</section>
+
+				<section id="thankyou">
+					<h3>Terima Kasih</h3>
+					<p>Sekali lagi, terima kasih banyak telah membeli aplikasi ini. Saya akan sangat senang sekali membantu Anda apabila di lain waktu Anda menemukan kesulitan atau error pada aplikasi. Permintaan pembuatan aplikasi lain untuk kasus yang lain akan saya tunggu dengan senang hati.</p>
+
+					<p class="append-bottom alt large"><strong>~ Toni Haryanto</strong></p>
+					<p><a href="#top">Go To Top</a></p>
+				</section>
+
+			</div>
+		</div>
+	</div><!-- end div .container -->
+
+	<script src="assets/bootstrap/jquery.js"></script>
+
+	<script type="text/javascript">
+		SyntaxHighlighter.all();
+
+		// slide to content
+		$('#navbar a').click(function(e){
+			e.preventDefault();
+			var des = $(this).attr('href');
+			goToSectionID(des);
+		})
+
+		// this function is for slide page to any element
+		function goToSectionID(des){
+			var os = (history.pushState)? 20 : 0;
+			os = (jQuery(window).width()>800)?os:0;
+
+			var pos = (jQuery(des).length>0 )?jQuery(des).offset().top : 0;
+			onanimate = true;
+			jQuery('html,body').animate({scrollTop:pos},1000,function(){
+				if(history.pushState){
+					history.pushState(null,null,des);
+				}else   
+				window.location.hash = des;
+				jQuery(window).scrollTop(pos);
+				onanimate=false
+			});
+		}
+	</script>
+
+</body>
+</html>
