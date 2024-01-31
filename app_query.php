@@ -12,7 +12,7 @@ $matrix_table = 'matrix';
 
 // open database
 $dbfile = ASSETPATH.'saved/'.$_SESSION['filename'].$_SESSION['file_ext'];
-$dbhandle = new SQLite3($dbfile);
+$dbhandle = new \SQLite3($dbfile);
 if (!$dbhandle) die ($error);
 
 // call function
